@@ -1,5 +1,5 @@
 import Assignement from "./Assignement.js";
-
+import AssignementsTags from "./AssignementsTags.js";
 export default {
     template:
 `<section v-show="assignements.length">
@@ -7,9 +7,7 @@ export default {
     <h1 class="font-bold mb-5">{{title}}</h1>
     <span>({{assignements.length}})</span>
 </div>
-<div class="mb-2">
-<span v-on="title === 'in progress' " @click="filterByTag" v-for="tag in tags" class="border-2 rounded mx-1 p-1 mb-2" :class="{'text-blue-500 border-blue-500':  tag == this.selectedTag}"> {{tag}} </span>
-</div>
+<assignements-tags v-model="selectedTag" :assignements = "this.assignements "></assignements-tags>
     <ul class="divide-y border-2">
         <assignement
         v-for="assignement in filteredAssignements"
@@ -19,6 +17,7 @@ export default {
         </assignement>
     </ul>
 </section>`,
+
     props: {
         assignements: {
             type:Array,
@@ -31,14 +30,11 @@ export default {
 
     data(){
         return {
-            selectedTag : 'all'
+            selectedTag:'all'
         }
     },
 
     computed: {
-        tags() {
-            return ['all', ... new Set(this.assignements.map(a => a.tags))]
-        },
 
         filteredAssignements() {
 
@@ -47,16 +43,11 @@ export default {
             }
 
             return this.assignements.filter(a => a.tags === this.selectedTag)
-        }
-    },
-
-    methods: {
-        filterByTag(e) {
-            this.selectedTag = e.target.innerText;
-        }
+        },
     },
 
     components: {
         Assignement,
+        AssignementsTags
     }
 }
