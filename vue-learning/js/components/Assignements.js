@@ -1,9 +1,11 @@
 import AssignementList from "./AssignementList.js";
+import FormComponent from "./Form.js"
 export default {
     template: `
 <div class="space-y-6">
  <AssignementList :assignements="filters.completed" title="completed"></AssignementList>
  <AssignementList :assignements="filters.inProgress" title="in progress"></AssignementList>
+<FormComponent @add="add"></FormComponent>
 </div>
      `,
     data() {
@@ -16,7 +18,7 @@ export default {
             ],
             completed: [
 
-            ]
+            ],
         }
     },
     methods: {
@@ -25,6 +27,10 @@ export default {
         },
         isCompleted(e){
             completed.push(e.target.value)
+        },
+        add(newItem){
+            this.assignements.push({name :newItem, done:false, id: this.assignements.length + 1  });
+            newItem="";
         }
     },
     computed: {
@@ -35,8 +41,8 @@ export default {
                 }
             }
         },
-
     components: {
         AssignementList,
+        FormComponent
     }
 }

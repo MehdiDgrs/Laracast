@@ -7,35 +7,38 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Test</title>
     <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style >
-        .text-green {
-            color:green;
-        }
-
-        .text-red {
-            color:red;
-        }
+             @keyframes spinner {
+                 to {transform: rotate(360deg);}
+             }
+             .is-loading {
+                 color:transparent;
+             }
+             .is-loading:before {
+                 content: '';
+                 box-sizing: border-box;
+                 position: absolute;
+                 top: 50%;
+                 left: 50%;
+                 width: 20px;
+                 height: 20px;
+                 margin-top: -10px;
+                 margin-left: -10px;
+                 border-radius: 50%;
+                 border: 2px solid #ccc;
+                 border-top-color: #000;
+                 animation: spinner .6s linear infinite;
+             }
     </style>
 </head>
-<body style="height:100VH; display: grid; place-items: center">
-<div id="app">
-  <button :class=" this.active ? 'text-red' : 'text-green'" @click="toggle">Click me </button>
+<body style="height:100VH; display: grid; place-items: center" class="bg-gray-800 text-white">
+<div id="app" >
+
 </div>
-<script>
- Vue.createApp({
-     data(){
-         return {
-             greetings: 'hello world',
-             buttonClass: 'text-green',
-             active: false,
-         }
-     },
-     methods: {
-        toggle() {
-            this.active = !this.active;
-        }
-     }
- }).mount('#app');
+<script type="module">
+    import App from './js/components/App.js'
+ Vue.createApp(App).mount('#app');
 </script>
 </body>
 </html>

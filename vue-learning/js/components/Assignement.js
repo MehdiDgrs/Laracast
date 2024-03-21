@@ -1,9 +1,10 @@
     export default {
         template: `
-            <li>
+            <li class="p-2 flex justify-between">
             <label class="m-5"> {{assignement.name}} </label>
             <input v-model="assignement.done"
-                   type="checkbox">
+                   type="checkbox"
+                   class="ml-2">
             </li>`,
         props: {
             assignement: {

@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="h-screen grid place-items-center">
+<div id="app">
+<section v-show="this.inProgressAssignements.length">
+    <h1 class="font-bold mb-5">{{message}}</h1>
+    <ul>
+        <li class="flex "
+            v-for="assignement in this.inProgressAssignements"
+            :key="assignement.id">
+
+            <label class="m-5"> {{assignement.name}} </label>
+            <input  v-model = "assignement.done" type="checkbox">
+        </li>
+    </ul>
+</section>
+    <section>
+        <h1> completed</h1>
+        <ul>
+            <li class="flex "
+                v-for="assignement in this.completedAssignements">
+                <label class="m-5"> {{assignement.name}} </label>
+                <input  v-model = "assignement.done" type="checkbox" >
+            </li>
+        </ul>
+    </section>
+</div>
+<script>
+    let app = {
+        data() {
+            return {
+                message: 'Hello Vue!',
+                assignements: [
+                    { name: 'Lire plus', done:false , id:1},
+                    { name: 'Tondre pelouse', done:false, id:3},
+                    { name: 'Randonnée', done:false, id:2},
+                ],
+                completed: [
+
+                ]
+            }
+        },
+    methods: {
+            checked(e){
+                this.assignements.done = !this.assignements.done;
+            },
+            isCompleted(e){
+                completed.push(e.target.value)
+            }
+    },
+        computed: {
+            completedAssignements(){
+                return this.assignements.filter(i=>i.done)
+            },
+            inProgressAssignements(){
+                return this.assignements.filter(i=>!i.done)
+            }
+        }
+    }
+
+    Vue.createApp(app
+    ).mount('#app')
+</script>
+</body>
+</html>
