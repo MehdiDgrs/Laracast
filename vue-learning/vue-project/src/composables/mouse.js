@@ -11,8 +11,7 @@ export function useMouse(){
     function update(event) {
         x.value = event.pageX
         y.value = event.pageY
-        console.log(x)
-    }
+        }
 
     onMounted(() => window.addEventListener('mousemove', update))
     onUnmounted(() => window.removeEventListener('mousemove', update))
