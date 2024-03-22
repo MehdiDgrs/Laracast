@@ -3,10 +3,10 @@ import FormComponent from "./Form.js"
 export default {
     template: `
   
-<div class="space-y-6">
- <AssignementList :assignements="filters.completed" title="completed"></AssignementList>
+<div class="flex gap-8" >
+ <AssignementList :assignements="filters.completed" title="completed"><FormComponent @add="add"></FormComponent></AssignementList>
  <AssignementList :assignements="filters.inProgress" title="in progress"></AssignementList>
-<FormComponent @add="add"></FormComponent>
+
 </div>
      
      `,
@@ -15,15 +15,21 @@ export default {
         return {
             message: 'Hello Vue!',
             assignements: [
-                { name: 'Lire plus', tags:'read', done:false , id:1},
-                { name: 'Tondre pelouse',tags:'gardening', done:false, id:3},
-                { name: 'Randonnée',tags:'sport', done:false, id:2},
-                { name: 'Randonnée',tags:'sport', done:false, id:2},
+
             ],
             completed: [
 
             ],
         }
+    },
+
+    created(){
+        fetch('http://localhost:3000/assignements').then(res=> {
+           return  res.json()
+        }).then((res)=> {
+           this.assignements = res;
+        })
+
     },
 
     methods: {
