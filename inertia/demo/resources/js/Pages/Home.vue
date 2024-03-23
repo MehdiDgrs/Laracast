@@ -6,10 +6,9 @@ import Nav from "../shared/Nav.vue";
 
 <template>
     <Nav></Nav>
-Hello World
-    <div>
+    <h1>
 
-    </div>
+    </h1>
 </template>
 
 <style scoped>

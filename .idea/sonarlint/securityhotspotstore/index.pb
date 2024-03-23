@@ -57,8 +57,6 @@ _
 /vue-learning/vue-project/src/views/HomeView.vue,6/a/6ae137a77227e4d203eb4553548638be463dc601
 `
 0vue-learning/vue-project/src/views/AboutView.vue,6/8/6816e0d3c6c43348c255e57751ea4aebcf8ecd37
-^
-.vue-learning/vue-project/src/views/Contact.vue,6/9/69089ba2bbbcc5b036a7761ad17d14763d29a7d0
 N
 vue-learning/package-lock.json,7/7/776f7d05b07732fb8d1e05086452ab3ea7b00ba1
 b
@@ -83,8 +81,6 @@ P
  inertia/demo/resources/js/app.js,7/1/710cc0cb6b44b0aaed54573654d0eff540510540
 V
 &inertia/demo/resources/js/bootstrap.js,b/2/b2dd000068eb9611b5202763765076872b62975d
-^
-.inertia/demo/resources/views/welcome.blade.php,9/5/95b842d884ae62b767f6643a2d43be027fb6e313
 K
 inertia/demo/routes/web.php,2/9/297bc7ebd6c38a9943838f4bfaebcd1180417191
 K
@@ -103,8 +99,6 @@ j
 :inertia/demo/app/Http/Middleware/HandleInertiaRequests.php,3/9/397ab21091cd803835dbd97437e4d8383356ef73
 N
 inertia/demo/bootstrap/app.php,c/7/c76966ff8ac597dbf959e498aaeb1a7128e9f206
-c
-3inertia/demo/resources/js/Pages/Welcome/Welcome.vue,a/3/a34e46928b3ed588db0304e2d2b24045cd26ec53
 N
 inertia/demo/package-lock.json,5/d/5d8ff25595d91f0c6ee1c6aedd012d981aff4a02
 Z
@@ -115,3 +109,19 @@ X
 (inertia/demo/resources/js/Pages/Home.vue,7/e/7e04ea41250afc10559d1bb540fbf0629625f41a
 X
 (inertia/demo/resources/js/shared/Nav.vue,2/b/2b1529bbf4ffe783b79c51c672d771fa34b72206
+X
+(inertia/demo/resources/js/Pages/User.vue,d/8/d881c122eff3c1599f9d407339056657792a6133
+[
++inertia/demo/resources/js/shared/Layout.vue,d/1/d183344b7ceb3044e36a6c4380a2a0c2a1d6cf86
+{
+Kinertia/demo/vendor/laravel/framework/src/Illuminate/Foundation/helpers.php,c/d/cd0fd26f45e3061991f6aad59edc346c3bc120de
+h
+8inertia/demo/node_modules/@inertiajs/vue3/types/app.d.ts,c/0/c045ecbbffe8e50706707e1e202dc6bdeba912e3
+e
+5inertia/demo/app/Http/Controllers/LoginController.php,3/9/39977b2e444fa5f8b404f551b7d0fa8ef9530714
+Y
+)inertia/demo/resources/js/Pages/Login.vue,5/6/5698bd0c665abcd8ac869d04eced67d82d34f5b9
+P
+ inertia/demo/app/Models/User.php,9/1/917d10e4619c797efb171498b4cc4038f08dc9b9
+b
+2inertia/demo/database/seeders/UsersTableSeeder.php,7/5/75f5b1e5f944b06514c00fdca3f71c73c5d084d4
